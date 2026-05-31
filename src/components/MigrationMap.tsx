@@ -9,12 +9,12 @@ export const MigrationMap: React.FC = () => {
 
   // Approximate relative coordinates for Middle East/Subcontinent map coordinates (X: West to East, Y: North to South)
   const mapCoordinates = [
-    { name: "Al-Madinah al-Munawwarah", x: 18, y: 68 }, // Far West
-    { name: "Baghdad", x: 26, y: 44 },                 // North-West
-    { name: "Delhi, India", x: 62, y: 52 },             // North-East
-    { name: "Faridpur, Jehanabad, Bihar", x: 78, y: 58 }, // Far East
-    { name: "Makkah al-Mukarramah", x: 19, y: 78 },     // Southwest
-    { name: "Faridpur / Patna", x: 80, y: 56 },          // Return East
+    { name: "Al-Madinah al-Munawwarah", x: 17.5, y: 73 }, // Just north of Makkah on the line
+    { name: "Baghdad", x: 29.5, y: 44.5 },                 // Along the Iraqi curve of the line
+    { name: "Delhi, India", x: 69.5, y: 61 },             // Directly on 'دهلي' node
+    { name: "Faridpur, Jehanabad, Bihar", x: 82, y: 72 }, // Directly on 'فريدفور' node
+    { name: "Makkah al-Mukarramah", x: 17, y: 83.5 },     // Directly on 'مكة' node
+    { name: "Faridpur / Patna", x: 84, y: 70 },          // Offset return node near Faridpur
   ];
 
   return (
@@ -156,12 +156,12 @@ export const MigrationMap: React.FC = () => {
               </div>
 
               {/* Interactive Vector SVG Map Drawer */}
-              <div className="relative flex-1 bg-cream-light/35 border border-gold-base/15 rounded flex items-center justify-center p-2">
-                <svg className="w-full h-full absolute inset-0 z-0 opacity-15" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  {/* Decorative map boundary outlines (Middle East & India representative paths) */}
-                  <path d="M5 80 C 10 70, 15 50, 20 40 C 25 30, 30 20, 45 15 C 50 20, 52 35, 50 50 C 45 60, 42 70, 35 85 C 20 90, 8 90, 5 80 Z" fill="none" stroke="#9C7A3C" strokeWidth="0.8" strokeDasharray="3 3" />
-                  <path d="M50 50 C 58 45, 62 30, 70 25 C 75 35, 80 45, 85 55 C 90 65, 80 75, 78 85 C 68 85, 55 75, 50 50 Z" fill="none" stroke="#9C7A3C" strokeWidth="0.8" strokeDasharray="3 3" />
-                </svg>
+              <div className="relative flex-1 border border-gold-base/15 rounded flex items-center justify-center overflow-hidden bg-cream-base/10">
+                <img 
+                  src="/vintage-map.jpg" 
+                  alt="Vintage migration map of the Faridpur Syeds" 
+                  className="w-full h-full object-cover absolute inset-0 z-0 opacity-85 transition-opacity duration-300"
+                />
 
                 {/* Compass Rose SVG */}
                 <div className="absolute top-4 right-4 w-12 h-12 pointer-events-none opacity-40 z-10">

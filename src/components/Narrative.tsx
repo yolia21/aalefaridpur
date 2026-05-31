@@ -88,14 +88,57 @@ export const Narrative: React.FC = () => {
                 <div className="w-full lg:w-1/2 relative group">
                   {/* Decorative golden frame behind the placeholder */}
                   <div className="absolute -inset-2 bg-gradient-to-tr from-gold-base/10 to-gold-light/20 rounded-lg blur opacity-40 group-hover:opacity-75 transition-all duration-500 pointer-events-none" />
-                  
                   {/* Subtly animated decorative border layout */}
-                  <div className="relative border-2 border-gold-base/30 rounded p-1.5 bg-cream-light transition-all duration-500 group-hover:border-gold-base/70 shadow-lg">
-                    <ImagePlaceholder 
-                      text={era.placeholderText}
-                      caption={era.placeholderCaption}
-                      className="w-full"
-                    />
+                  <div className="relative border-2 border-gold-base/30 rounded p-1.5 bg-cream-light transition-all duration-500 group-hover:border-gold-base/70 shadow-lg w-full">
+                    {era.id === "era-1" ? (
+                      <div className="relative group overflow-hidden border border-gold-base/20 rounded-md bg-cream-base/50 p-4 flex flex-col justify-between transition-all duration-500 hover:border-gold-base/60 hover:bg-cream-base/80 shadow-sm hover:shadow-md">
+                        {/* Heritage Corner Ornaments */}
+                        <div className="corner-ornament ornament-tl" />
+                        <div className="corner-ornament ornament-tr" />
+                        <div className="corner-ornament ornament-bl" />
+                        <div className="corner-ornament ornament-br" />
+
+                        <div className="overflow-hidden rounded-sm border border-cream-dark/40 mb-3 bg-cream-light">
+                          <img 
+                            src="/madinah-art.jpg" 
+                            alt={era.title}
+                            className="w-full h-auto object-contain max-h-[300px] mx-auto transition-transform duration-700 group-hover:scale-102"
+                          />
+                        </div>
+                        <div className="relative z-10 border-t border-cream-dark/60 pt-3">
+                          <p className="text-xs text-stone-600 text-center font-sans font-light leading-relaxed">
+                            {era.placeholderCaption}
+                          </p>
+                        </div>
+                      </div>
+                    ) : era.id === "era-2" ? (
+                      <div className="relative group overflow-hidden border border-gold-base/20 rounded-md bg-cream-base/50 p-4 flex flex-col justify-between transition-all duration-500 hover:border-gold-base/60 hover:bg-cream-base/80 shadow-sm hover:shadow-md">
+                        {/* Heritage Corner Ornaments */}
+                        <div className="corner-ornament ornament-tl" />
+                        <div className="corner-ornament ornament-tr" />
+                        <div className="corner-ornament ornament-bl" />
+                        <div className="corner-ornament ornament-br" />
+
+                        <div className="overflow-hidden rounded-sm border border-cream-dark/40 mb-3 flex justify-center bg-cream-light">
+                          <img 
+                            src="/delhi-court.jpg" 
+                            alt={era.title}
+                            className="w-full h-auto object-contain max-h-[300px] mx-auto transition-transform duration-700 group-hover:scale-102"
+                          />
+                        </div>
+                        <div className="relative z-10 border-t border-cream-dark/60 pt-3">
+                          <p className="text-xs text-stone-600 text-center font-sans font-light leading-relaxed">
+                            {era.placeholderCaption}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <ImagePlaceholder 
+                        text={era.placeholderText}
+                        caption={era.placeholderCaption}
+                        className="w-full"
+                      />
+                    )}
                   </div>
                 </div>
               </div>
