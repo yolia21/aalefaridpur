@@ -77,8 +77,8 @@ export const narrativesData: NarrativeEra[] = [
       "Faridpur became a royal Jagir—a center of learning, agriculture, and spiritual authority, serving as the ancestral seat where consecutive generations built traditional havelis, mosques, and libraries."
     ],
     keyFigures: ["Syed Muhammad Farid", "Syed Muhammad Dawood", "Syed Najm al-Din"],
-    placeholderText: "Farman-e-Shahi Imperial Scroll",
-    placeholderCaption: "Reproduction of a Mughal Imperial Farman (royal decree) with gold illumination and the official seal, granting land ownership of Faridpur to Syed Muhammad Dawood."
+    placeholderText: "Mughal Imperial Farman-e-Shahi",
+    placeholderCaption: "An authentic historical Mughal Imperial Farman (royal decree) scroll from the 18th century, featuring elegant Persian Nastaliq calligraphy, imperial medallion seals, and official stamps."
   },
   {
     id: "era-4",
@@ -92,8 +92,8 @@ export const narrativesData: NarrativeEra[] = [
       "Following the suppression of the rebellion, Haji Shubrati was marked as a rebel by the British Raj. To escape execution, he embarked on a self-imposed 15-year exile in the holy city of Makkah. He eventually returned to Bihar, where he continued to serve as a beacon of resistance and spiritual guidance."
     ],
     keyFigures: ["Syed Mir Majid Ali (Haji Shubrati)", "Syed Abdul Majeed", "Syed Muhammad Kazim"],
-    placeholderText: "Historical Sketch of the 1857 Resistance in Bihar",
-    placeholderCaption: "Colonial-era illustration of the defensive stand and rebellion in Jehanabad/Patna region during the 1857 uprising."
+    placeholderText: "1857 Indian Rebellion Engraving",
+    placeholderCaption: "A 19th-century historical wood engraving depicting Indian freedom fighters (sepoys) in close-combat with British forces defending fortifications during the 1857 uprising."
   }
 ];
 

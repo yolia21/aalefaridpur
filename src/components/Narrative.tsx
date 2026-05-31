@@ -132,6 +132,48 @@ export const Narrative: React.FC = () => {
                           </p>
                         </div>
                       </div>
+                    ) : era.id === "era-3" ? (
+                      <div className="relative group overflow-hidden border border-gold-base/20 rounded-md bg-cream-base/50 p-4 flex flex-col justify-between transition-all duration-500 hover:border-gold-base/60 hover:bg-cream-base/80 shadow-sm hover:shadow-md">
+                        {/* Heritage Corner Ornaments */}
+                        <div className="corner-ornament ornament-tl" />
+                        <div className="corner-ornament ornament-tr" />
+                        <div className="corner-ornament ornament-bl" />
+                        <div className="corner-ornament ornament-br" />
+
+                        <div className="overflow-hidden rounded-sm border border-cream-dark/40 mb-3 flex justify-center bg-cream-light">
+                          <img 
+                            src="/farman-shahi.jpg" 
+                            alt={era.title}
+                            className="w-full h-auto object-contain max-h-[300px] mx-auto transition-transform duration-700 group-hover:scale-102"
+                          />
+                        </div>
+                        <div className="relative z-10 border-t border-cream-dark/60 pt-3">
+                          <p className="text-xs text-stone-600 text-center font-sans font-light leading-relaxed">
+                            {era.placeholderCaption}
+                          </p>
+                        </div>
+                      </div>
+                    ) : era.id === "era-4" ? (
+                      <div className="relative group overflow-hidden border border-gold-base/20 rounded-md bg-cream-base/50 p-4 flex flex-col justify-between transition-all duration-500 hover:border-gold-base/60 hover:bg-cream-base/80 shadow-sm hover:shadow-md">
+                        {/* Heritage Corner Ornaments */}
+                        <div className="corner-ornament ornament-tl" />
+                        <div className="corner-ornament ornament-tr" />
+                        <div className="corner-ornament ornament-bl" />
+                        <div className="corner-ornament ornament-br" />
+
+                        <div className="overflow-hidden rounded-sm border border-cream-dark/40 mb-3 flex justify-center bg-cream-light">
+                          <img 
+                            src="/rebellion-1857.jpg" 
+                            alt={era.title}
+                            className="w-full h-auto object-contain max-h-[300px] mx-auto transition-transform duration-700 group-hover:scale-102"
+                          />
+                        </div>
+                        <div className="relative z-10 border-t border-cream-dark/60 pt-3">
+                          <p className="text-xs text-stone-600 text-center font-sans font-light leading-relaxed">
+                            {era.placeholderCaption}
+                          </p>
+                        </div>
+                      </div>
                     ) : (
                       <ImagePlaceholder 
                         text={era.placeholderText}
