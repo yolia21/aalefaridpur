@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+@theme {
+  --color-lapis-deep: #071624;
+  --color-lapis-base: #0D233A;
+  --color-lapis-medium: #163A5F;
+  --color-lapis-light: #235282;
+
+  --color-gold-light: #E2C374;
+  --color-gold-base: #C5A059;
+  --color-gold-dark: #9C7A3C;
+
+  --color-cream-light: #FDFBF7;
+  --color-cream-base: #F5F2EB;
+  --color-cream-dark: #E8E2D5;
+
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-amiri: var(--font-amiri), serif;
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #FDFBF7;
+  --foreground: #1C1917;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
+/* Elegant custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F2EB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9C7A3C;
+}
+
+/* High-fidelity CSS parchment paper texture overlay */
+.parchment-texture {
+  background-color: #FDFBF7;
+  background-image: 
+    radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 0),
+    radial-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Traditional Arabic calligraphic script adjustment */
+.urdu-script, .arabic-script {
+  font-family: var(--font-amiri);
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* Premium micro-animations */
+@keyframes gold-pulse {
+  0%, 100% {
+    border-color: rgba(197, 160, 89, 0.3);
+    box-shadow: 0 0 5px rgba(197, 160, 89, 0.1);
+  }
+  50% {
+    border-color: rgba(226, 195, 116, 0.8);
+    box-shadow: 0 0 15px rgba(226, 195, 116, 0.3);
+  }
+}
+
+.gold-glow-hover:hover {
+  animation: gold-pulse 2s infinite ease-in-out;
+}
+
+/* Custom corner ornaments for heritage cards */
+.corner-ornament {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #C5A059;
+  border-style: solid;
+  pointer-events: none;
+}
+
+.ornament-tl { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
+.ornament-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
+.ornament-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
+.ornament-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
