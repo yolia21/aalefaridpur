@@ -47,8 +47,8 @@ export const narrativesData: NarrativeEra[] = [
       "Two key spiritual anchors of this era are Syed Shah Uthman Sher Sawaar (known for his spiritual mastery and legendary title) and his son, the celebrated saint Syed Shah Muhammad Yusuf Burqa-Posh, whose title reflects his practice of veiling himself, a symbol of divine humility and spiritual concealment."
     ],
     keyFigures: ["Imam Ali Zain-ul-Abidin", "Imam Muhammad al-Baqir", "Syed Shah Uthman Sher Sawaar", "Syed Shah Muhammad Yusuf Burqa-Posh"],
-    placeholderText: "Islamic Geometric Arabesque & Calligraphy Art",
-    placeholderCaption: "High-fidelity restoration representing early Islamic geometric motifs and calligraphy hailing from the Madinah-Baghdad migration period."
+    placeholderText: "Architectural Painting of Al-Masjid an-Nabawi",
+    placeholderCaption: "A classic hand-painted architectural layout of Al-Masjid an-Nabawi (The Prophet's Mosque) in Al-Madinah al-Munawwarah, detailing the historic Green Dome, outer minarets, and open courtyards with date palms."
   },
   {
     id: "era-2",
@@ -62,8 +62,8 @@ export const narrativesData: NarrativeEra[] = [
       "Balancing spiritual guidance with the rigorous execution of administrative and judicial duties, this era established the family as pillars of Delhi's intellectual and theological elite."
     ],
     keyFigures: ["Syed Abdul Raheem Mufti", "Muhammad Qasim", "Ashiq Ali"],
-    placeholderText: "Imperial Delhi Darbar Painting Placeholder",
-    placeholderCaption: "Lithograph of the Mughal Imperial Court in Delhi, depicting the presence of the Qazi and Mufti advising the royal administration."
+    placeholderText: "Mughal Royal Court Painting",
+    placeholderCaption: "A traditional Mughal miniature painting depicting the Emperor holding audience (Darbar) under an ornate golden canopy, surrounded by imperial advisors, guards, and courtiers in traditional attire."
   },
   {
     id: "era-3",

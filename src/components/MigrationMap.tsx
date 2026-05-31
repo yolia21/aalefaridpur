@@ -258,10 +258,10 @@ export const MigrationMap: React.FC = () => {
               {/* Map Footer Metadata Block */}
               <div className="relative z-10 border-t border-gold-base/20 pt-3 mt-4 text-center">
                 <span className="font-serif text-[11px] font-bold text-gold-dark uppercase block mb-1">
-                  Geographic Key & Map Coordinates
+                  Interactive Migration Path
                 </span>
                 <p className="text-[10px] text-stone-600 font-sans leading-relaxed px-4">
-                  Showing step {activeStep} node: <span className="font-semibold text-lapis-base">{mapCoordinates[activeStep - 1].name}</span>, plotting legacy vector traces relative to ancient pilgrim routes and imperial royal estates.
+                  Active node: <span className="font-semibold text-lapis-base">{mapCoordinates[activeStep - 1].name}</span>. Plotted on a custom calligraphic route map tracking the journey from Makkah to Uzbekistan, Lahore, Delhi, and the ancestral estate of Faridpur in Jehanabad, Bihar.
                 </p>
               </div>
             </div>
