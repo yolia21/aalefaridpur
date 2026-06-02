@@ -102,43 +102,64 @@ export const migrationSteps: MigrationStep[] = [
     step: 1,
     location: "Al-Madinah al-Munawwarah",
     arabicName: "المدينة المنورة",
-    title: "The Ancestral Origin",
-    description: "The spiritual cradle of the lineage. Tracing roots directly to the Holy Prophet ﷺ, Imam Ali, and the early Imams of the Ahl al-Bayt (آلِ بیت)."
+    title: "Origin: The Radiant City",
+    description: "The spiritual cradle of the lineage in the Hijaz. Tracing ancestry directly to the Holy Prophet ﷺ through Imam Ali Zain-ul-Abidin and Imam Muhammad al-Baqir."
   },
   {
     step: 2,
     location: "Baghdad",
     arabicName: "بغداد",
-    title: "Center of Islamic Scholarship",
-    description: "Following socio-political changes, descendants migrated to Baghdad, the intellectual and spiritual capital of the Abbasid caliphate, absorbing and compiling theological knowledge."
+    title: "Waypoint: Center of Islamic Scholarship",
+    description: "Generations of early ancestors migrated to Baghdad, the intellectual and theological capital of the Abbasid caliphate, to refine their scholarship."
   },
   {
     step: 3,
-    location: "Delhi, India",
-    arabicName: "دهلي",
-    title: "Seat of Judicial & Spiritual Authority",
-    description: "Arrival in the Indian Subcontinent. The Syeds became respected saints and royal jurists (Qazis) under the Mughal courts, shaping Delhi's judicial landscape."
+    location: "Uzbekistan",
+    arabicName: "أوزبكستان",
+    title: "Waypoint: Overland Transit Route",
+    description: "Overland migration path through Persia, Bukhara, and Transoxiana (Uzbekistan) before entering the northern gates of the Indian subcontinent."
   },
   {
     step: 4,
-    location: "Faridpur, Jehanabad, Bihar",
-    arabicName: "فريدفور، بهار",
-    title: "The Ancestral Estate & Royal Jagir",
-    description: "Syed Muhammad Farid migrates to Bihar, and Syed Muhammad Dawood receives the imperial Farman-e-Shahi to establish the permanent ancestral estate at Faridpur."
+    location: "Lahore",
+    arabicName: "لاہور",
+    title: "Waypoint: Early Subcontinent Entry",
+    description: "A major administrative and spiritual hub in Punjab, representing the physical entry of the lineage into the subcontinent's spiritual landscape."
   },
   {
     step: 5,
-    location: "Makkah al-Mukarramah",
-    arabicName: "مكة المكرمة",
-    title: "15-Year Exile of Haji Shubrati",
-    description: "Following active participation in the 1857 Rebellion, Syed Mir Majid Ali (Haji Shubrati) escapes British arrest and spends 15 years in exile in the holy city of Makkah."
+    location: "Delhi, India",
+    arabicName: "دہلی",
+    title: "Waypoint: Seat of Judicial & Spiritual Authority",
+    description: "Arrival in the Mughal capital. Descendants served as imperial jurists, Saints, and Chief Judges (Qazis/Muftis) advising the Mughal courts."
   },
   {
     step: 6,
-    location: "Faridpur / Patna, Bihar",
-    arabicName: "فريدفور / بتنه",
-    title: "Return and Continuation of the Legacy",
-    description: "Haji Shubrati returns from Makkah, establishing a continuous educational and spiritual legacy in Bihar, carried forward by his descendants into the modern era."
+    location: "Jaunpur",
+    arabicName: "جونپور",
+    title: "Waypoint: Pre-Bihar Settlement",
+    description: "Scholarly residency in the historical Shahi Sultanate of Jaunpur, celebrated as the 'Shiraz of the East' for its theological universities."
+  },
+  {
+    step: 7,
+    location: "Faridpur, Jehanabad, Bihar",
+    arabicName: "فریدپور، بہار",
+    title: "Destination: The Ancestral Estate & Royal Jagir",
+    description: "Syed Muhammad Farid migrates to Bihar, and Syed Muhammad Dawood receives the imperial Farman-e-Shahi granting land to establish the ancestral seat of Faridpur."
+  },
+  {
+    step: 8,
+    location: "Makkah al-Mukarramah",
+    arabicName: "مكة المكرمة",
+    title: "Exile: Haji Shubrati's Exile & Retreat",
+    description: "Following active resistance in the 1857 Indian Rebellion, Syed Mir Majid Ali (Haji Shubrati) escapes British arrest to find 15 years of exile and safety in Makkah."
+  },
+  {
+    step: 9,
+    location: "Sadar Gali, Patna / Faridpur",
+    arabicName: "پٹنہ / فریدپور",
+    title: "Return: Continuation of the Legacy",
+    description: "Haji Shubrati returns from exile to Sadar Gali, Patna City, and Faridpur, reorganizing historical archives and maintaining the spiritual lineage."
   }
 ];
 

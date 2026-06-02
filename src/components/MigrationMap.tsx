@@ -1,20 +1,22 @@
 "use client";
 
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { migrationSteps } from "../data/historicalData";
+
+const MapWrapper = dynamic(() => import("./MapWrapper"), {
+  ssr: false,
+  loading: () => (
+    <div className="h-full w-full min-h-[400px] lg:min-h-[500px] flex items-center justify-center bg-[#F5F2EB] text-[#0D233A] font-sans text-xs border border-[#C5A059]/20 rounded-md">
+      Loading Interactive Map...
+    </div>
+  )
+});
 
 export const MigrationMap: React.FC = () => {
   const [activeStep, setActiveStep] = useState<number>(1);
 
-  // Balanced coordinates for our premium vector map grid
-  const mapCoordinates = [
-    { name: "Al-Madinah al-Munawwarah", x: 18, y: 68 }, // Far West
-    { name: "Baghdad", x: 26, y: 44 },                 // North-West
-    { name: "Delhi, India", x: 62, y: 52 },             // North-East
-    { name: "Faridpur, Jehanabad, Bihar", x: 78, y: 58 }, // Far East
-    { name: "Makkah al-Mukarramah", x: 19, y: 78 },     // Southwest
-    { name: "Faridpur / Patna", x: 80, y: 56 },          // Return East
-  ];
+  // Component uses dynamic MapWrapper with Leaflet rendering
 
   return (
     <section id="migration-timeline" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-lapis-deep text-cream-light border-y-2 border-gold-base/30">
@@ -154,104 +156,12 @@ export const MigrationMap: React.FC = () => {
                 <span>Subcontinent & Middle East</span>
               </div>
 
-              {/* Interactive Vector SVG Map Drawer */}
-              <div className="relative flex-1 bg-cream-light/35 border border-gold-base/15 rounded flex items-center justify-center p-2">
-                <svg className="w-full h-full absolute inset-0 z-0 opacity-25 text-gold-dark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  {/* Decorative map boundary outlines (Middle East & India representative paths) */}
-                  <path d="M5 80 C 10 70, 15 50, 20 40 C 25 30, 30 20, 45 15 C 50 20, 52 35, 50 50 C 45 60, 42 70, 35 85 C 20 90, 8 90, 5 80 Z" fill="none" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 3" />
-                  <path d="M50 50 C 58 45, 62 30, 70 25 C 75 35, 80 45, 85 55 C 90 65, 80 75, 78 85 C 68 85, 55 75, 50 50 Z" fill="none" stroke="currentColor" strokeWidth="0.8" strokeDasharray="3 3" />
-                </svg>
-
-                {/* Compass Rose SVG */}
-                <div className="absolute top-4 right-4 w-12 h-12 pointer-events-none opacity-40 z-10">
-                  <svg viewBox="0 0 100 100" className="w-full h-full text-gold-dark" fill="none" stroke="currentColor">
-                    <circle cx="50" cy="50" r="45" strokeWidth="0.5" strokeDasharray="2 2" />
-                    <circle cx="50" cy="50" r="10" strokeWidth="0.5" />
-                    <line x1="50" y1="5" x2="50" y2="95" strokeWidth="0.5" />
-                    <line x1="5" y1="50" x2="95" y2="50" strokeWidth="0.5" />
-                    <polygon points="50,5 53,40 50,50" fill="currentColor" />
-                    <polygon points="50,5 47,40 50,50" fill="none" stroke="currentColor" />
-                    <polygon points="50,95 53,60 50,50" fill="none" stroke="currentColor" />
-                    <polygon points="50,95 47,60 50,50" fill="currentColor" />
-                    <polygon points="95,50 60,53 50,50" fill="currentColor" />
-                    <polygon points="95,50 60,47 50,50" fill="none" stroke="currentColor" />
-                    <polygon points="5,50 40,53 50,50" fill="none" stroke="currentColor" />
-                    <polygon points="5,50 40,47 50,50" fill="currentColor" />
-                    <text x="47" y="15" className="text-[12px] font-serif font-bold fill-current">N</text>
-                  </svg>
-                </div>
-
-                {/* Scale */}
-                <div className="absolute bottom-4 left-4 text-[9px] font-sans font-bold text-gold-dark/60 pointer-events-none z-10 uppercase flex flex-col gap-1">
-                  <div className="flex items-center gap-1">
-                    <div className="w-8 h-1 bg-gradient-to-r from-gold-dark via-transparent to-gold-dark border border-gold-dark/50" />
-                    <span>Gradus Historici</span>
-                  </div>
-                  <span>Scale: 1 Generation : 30 Years</span>
-                </div>
-
-                {/* SVG connection lines between nodes */}
-                <svg className="absolute inset-0 w-full h-full z-10 pointer-events-none" viewBox="0 0 100 100">
-                  {mapCoordinates.map((coord, i) => {
-                    if (i === 0) return null;
-                    const prev = mapCoordinates[i - 1];
-                    const isActiveLine = activeStep > i;
-                    return (
-                      <g key={i}>
-                        <path
-                          d={`M ${prev.x} ${prev.y} Q ${(prev.x + coord.x) / 2} ${(prev.y + coord.y) / 2 - 8}, ${coord.x} ${coord.y}`}
-                          fill="none"
-                          stroke={isActiveLine ? "#C5A059" : "#E8E2D5"}
-                          strokeWidth={isActiveLine ? 1.5 : 1}
-                          strokeDasharray={isActiveLine ? "none" : "3 3"}
-                          className="transition-all duration-700"
-                        />
-                      </g>
-                    );
-                  })}
-                </svg>
-
-                {/* Map Nodes (Interactive markers) */}
-                {mapCoordinates.map((coord, index) => {
-                  const stepNum = index + 1;
-                  const isActive = activeStep === stepNum;
-                  const isVisited = activeStep >= stepNum;
-                  
-                  return (
-                    <div
-                      key={stepNum}
-                      className="absolute z-20 transition-all duration-500 cursor-pointer"
-                      style={{ left: `${coord.x}%`, top: `${coord.y}%`, transform: "translate(-50%, -50%)" }}
-                      onClick={() => setActiveStep(stepNum)}
-                      title={coord.name}
-                    >
-                      {/* Outer pulsing ring for active node */}
-                      {isActive && (
-                        <span className="absolute inline-flex h-6 w-6 -left-3 -top-3 rounded-full bg-gold-base/30 animate-ping" />
-                      )}
-
-                      {/* Inner dot */}
-                      <div
-                        className={`w-3.5 h-3.5 rounded-full border transition-all duration-300 ${
-                          isActive
-                            ? "bg-gold-base border-gold-dark scale-125 shadow-md"
-                            : isVisited
-                            ? "bg-lapis-base border-gold-base/50"
-                            : "bg-cream-dark border-stone-400"
-                        }`}
-                      />
-                      
-                      {/* Small text label under node */}
-                      <span className={`absolute top-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] px-1 rounded shadow-sm font-sans font-bold border transition-colors pointer-events-none ${
-                        isActive 
-                          ? "bg-lapis-base border-gold-base text-gold-light"
-                          : "bg-cream-light/95 border-cream-dark/50 text-stone-600"
-                      }`}>
-                        {stepNum}. {coord.name.split(",")[0]}
-                      </span>
-                    </div>
-                  );
-                })}
+              {/* Interactive Dynamic Leaflet Map Drawer */}
+              <div className="relative flex-1 border border-gold-base/15 rounded overflow-hidden min-h-[300px] z-10">
+                <MapWrapper
+                  activeStep={activeStep}
+                  onSelectWaypoint={(step) => setActiveStep(step)}
+                />
               </div>
 
               {/* Map Footer Metadata Block */}
@@ -260,7 +170,7 @@ export const MigrationMap: React.FC = () => {
                   Geographic Key & Map Coordinates
                 </span>
                 <p className="text-[10px] text-stone-600 font-sans leading-relaxed px-4">
-                  Showing step {activeStep} node: <span className="font-semibold text-lapis-base">{mapCoordinates[activeStep - 1].name}</span>, plotting legacy vector traces relative to ancient pilgrim routes and imperial royal estates.
+                  Showing step {activeStep} node: <span className="font-semibold text-lapis-base">{migrationSteps[activeStep - 1]?.location}</span>, tracking the route and spiritual legacy on an interactive geographical tile layer.
                 </p>
               </div>
             </div>

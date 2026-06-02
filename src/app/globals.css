@@ -96,3 +96,43 @@ body {
 .ornament-tr { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
 .ornament-bl { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
 .ornament-br { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+
+/* Historical Leaflet styling overrides */
+.historical-map .leaflet-container {
+  background-color: #F5F2EB !important;
+  font-family: inherit;
+}
+
+.historical-map .leaflet-layer {
+  filter: sepia(0.6) contrast(1.1) brightness(0.9) hue-rotate(-15deg);
+}
+
+.historical-map .leaflet-popup-content-wrapper {
+  background-color: #FDFBF7 !important;
+  color: #1C1917 !important;
+  border: 1px solid #C5A059 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15) !important;
+}
+
+.historical-map .leaflet-popup-tip {
+  background-color: #FDFBF7 !important;
+  border-left: 1px solid #C5A059 !important;
+  border-bottom: 1px solid #C5A059 !important;
+}
+
+.historical-map .leaflet-bar {
+  border: 1px solid #C5A059 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.historical-map .leaflet-bar a {
+  background-color: #FDFBF7 !important;
+  color: #0D233A !important;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.3) !important;
+}
+
+.historical-map .leaflet-bar a:hover {
+  background-color: #F5F2EB !important;
+  color: #C5A059 !important;
+}
