@@ -104,7 +104,8 @@ body {
 }
 
 .historical-map .leaflet-layer {
-  filter: sepia(0.6) contrast(1.1) brightness(0.9) hue-rotate(-15deg);
+  /* Keep oceans blue and enhance map readability by using a light contrast/saturation adjustment */
+  filter: saturate(1.1) brightness(0.98) contrast(1.02);
 }
 
 .historical-map .leaflet-popup-content-wrapper {

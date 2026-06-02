@@ -149,10 +149,10 @@ const MapWrapper: React.FC<MapWrapperProps> = ({ activeStep, onSelectWaypoint })
       >
         <ChangeMapView center={mapCenter} zoom={mapZoom} />
         
-        {/* Leaflet Tile Layer using CartoDB Positron for a clean base */}
+        {/* Leaflet Tile Layer using CartoDB Voyager for soft blue oceans and warm land tones */}
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
         />
 
         {/* Dash Gold Polyline Path along Waypoints */}
